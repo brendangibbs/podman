@@ -80,10 +80,14 @@ If you were to remove your container now, all the work you've done to install Op
     - `-p 9999:9990`: Port-forward the container's port (9999 as seen in the properties file you edited) to your local machine's 9990 port (i.e. 127.0.0.1:9990)
     - `--name`: A short name for the container, instead of using the container's ID each time
 2. Exec into the container `podman exec -it my-rocky-container sh` and start fas: `service fas start`
+    2.1 OR, run it from your terminal: `podman container exec -it my-rocky-container service fas start`
 3. Go to https://127.0.0.1:9990 on your browser, and enter the username and password from the properties file.
 
 ## Useful Commands
 ### Common Podman commands
+- `podman images` to list your created images
+- `podman run -it -d <image>:<tag>` to start a new container with your image
+- `podman container list` to list existing containers built with your image/s
 - `podman start <containerID>`
 - `podman stop <containerID>`
 - `podman top <containerID>` to see the processes running inside the container
